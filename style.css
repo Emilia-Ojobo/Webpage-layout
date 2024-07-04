@@ -1,0 +1,705 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.grid-container{
+    width: 100%;
+    height: 150vh;
+    display: grid;
+    background-color: rgb(248, 242, 242);
+    grid-template-columns: 5% 1fr 1fr 20%;
+    grid-template-rows: 8% repeat(5, 1fr);
+    grid-template-areas: 
+    "sidebar header header header"
+    "sidebar post post-content suggestions"
+    "sidebar post post-content suggestions"
+    "sidebar view-post post-content suggestions"
+    "sidebar view-post text-post suggestions"
+    "sidebar view-post text-post suggestions";
+    grid-gap: 10px;
+  
+
+}
+.grid-container .grid-items{
+    background-color: #fff !important;
+
+}
+
+
+
+
+.grid-container .grid-items.header{
+    width: 100%;
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgb(11, 11, 66) !important;
+    align-items: center;
+    
+}
+
+.grid-container .grid-items.header nav{
+    display: flex;
+    width: 100%;
+    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    position: absolute;
+    
+}
+.grid-container .grid-items.header nav .logo{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    width: 30px;
+    height: 60px;
+    align-self: center;
+   margin-top: 0;
+   margin-bottom: 0;
+   padding: 16.5px;
+
+}
+.grid-container .grid-items.header .logo a{
+    text-decoration-line: none;
+    color: rgb(59, 253, 10);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+.grid-container .grid-items.header nav ul{
+    display: flex;
+    width: 40%;
+    justify-content : space-between;
+
+}
+.grid-container .grid-items.header nav ul li{
+    list-style: none;
+    position: relative;
+    
+   
+}
+.grid-container .grid-items.header nav ul li a{
+    color: white;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+   
+}
+.grid-container .grid-items.header nav ul li ul{
+    background-color: rgb(11, 11, 66);
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 200%;
+    top: 100%;
+    
+}
+.grid-container .grid-items.header nav ul li.first-drop:hover > ul{
+    display: flex;
+
+    
+}
+.grid-container .grid-items.header nav ul li ul li a{
+    position: relative;
+}
+
+
+.grid-container .grid-items.header nav ul li ul li a{
+     width: 100%;
+     padding: 10px 20px ;
+     display: block;
+     
+}
+.grid-container .grid-items.header nav ul li ul li a:hover{
+    background-color: rgb(59, 253, 10);
+     
+} 
+/* second-drop */
+.grid-container .grid-items.header nav ul li ul li ul{
+    background-color:  rgb(11, 11, 66) ;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+
+}
+.grid-container .grid-items.header nav ul li.first-drop ul li.second-drop:hover > ul{
+    display: block;
+
+    
+}
+
+.grid-container .grid-items.header .profile{
+    display: flex;
+   
+
+}
+.grid-container .grid-items.header .profile img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+.grid-container .grid-items.sidebar{
+    background-color: rgb(166, 204, 229) !important;
+    grid-area: sidebar;
+    height: 100%;
+   
+}
+.grid-container .grid-items.sidebar nav .icons .book{
+    padding-bottom: 0.2em;
+    padding-top: 2em;
+    display: grid;
+    place-items: center;
+
+}
+.grid-container .grid-items.sidebar nav .y-icon{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 1.7em;
+    background-color:  rgb(2, 2, 119);
+    padding-left: 0.7em;
+    height: 4.5em;
+    margin: 0;
+
+}
+
+
+
+
+.grid-container .grid-items.post{
+    grid-area: post;
+    padding: 30px;
+    
+}
+.grid-container .grid-items.post .p{
+   padding-bottom: 10em;
+    
+}
+
+.grid-container .grid-items.post .icons{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3em;
+    padding-bottom: 5em;
+}
+
+.grid-container .grid-items.post .icons nav{
+    display: flex;
+}
+.grid-container .grid-items.post .icons .button{
+    background-color: blue;
+    padding: 5px;
+    margin-right: 20px !important;
+    color: #fff;
+    border: none;
+
+}
+.grid-container .grid-items.post .icons .joint{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.grid-container .grid-items.post .icons .camera{
+    display: flex;
+}
+.grid-container .grid-items.post .icons .joint .cam{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+
+
+.grid-container .grid-items.view-post{
+    grid-area: view-post;
+    padding-left: 25px;
+    padding-right:25px;
+    padding-top: 30px;
+    padding-bottom: 0;
+
+}
+.grid-container .grid-items.view-post .img-con .date{
+    font-size: 15px;
+}
+
+.grid-container .grid-items.view-post .img-con{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.grid-container .grid-items.view-post .img-con .profile{
+    display: flex;
+}
+
+
+.grid-container .grid-items.view-post .img-con .profile img{
+    width: 5em;
+    height: 5em;
+    border-radius: 100%;
+}
+.grid-container .grid-items.view-post .picture img{
+    width: 100%;
+    height: 12em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+}
+.grid-container .grid-items.view-post .icons{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5em;
+
+}
+.grid-container .grid-items.view-post .icons .union{
+    display: flex;
+    justify-content: space-between;
+}
+.grid-container .grid-items.view-post p{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+}
+.grid-container .grid-items.view-post .comments{
+    color: blue;
+    padding: 5px;
+
+}
+.grid-container .grid-items.view-post #sub-head{
+    color: blue;
+}
+.grid-container .grid-items.view-post .icons .union .message{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.grid-container .grid-items.view-post .img-con .profile .mini h3{
+    padding-left: 1em;
+    padding-bottom: 0;
+    padding-top: 1em;
+}
+.grid-container .grid-items.view-post .img-con .profile .mini{
+    display: flex;
+    display: inline-block;
+}
+.grid-container .grid-items.view-post .img-con .profile .mini p{
+    padding-left: 1.5em;
+    font-size: 14px;
+    padding-top: 0;
+}
+.grid-container .grid-items.view-post .img-con .profile-date{
+    font-size: 10px;
+}
+
+
+
+.grid-container .grid-items.post-content{
+    grid-area: post-content;
+    padding-left: 25px;
+    padding-right:25px;
+    padding-top: 35px;
+    padding-bottom: 1px;
+}
+.grid-container .grid-items.post-content .img-con{
+    display: flex;
+    justify-content: space-between;
+}
+.grid-container .grid-items.post-content .img-con .profile{
+    display: flex;
+}
+
+
+.grid-container .grid-items.post-content .img-con .profile img{
+    width: 5em;
+    height: 5em;
+    border-radius: 100%;
+}
+.grid-container .grid-items.post-content .picture img{
+    width: 100%;
+    height: 12em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+
+}
+.grid-container .grid-items.post-content .icons{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3em;
+
+
+}
+.grid-container .grid-items.post-content .icons .union{
+    display: flex;
+    justify-content: space-between;
+}
+.grid-container .grid-items.post-content p{
+    padding-top: 1em;
+    padding-bottom: 0.7em;
+
+}
+.grid-container .grid-items.post-content .comments{
+    color: blue;
+    padding: 5px;
+   
+
+}
+.grid-container .grid-items.post-content .icons .union .message{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.grid-container .grid-items.post-content .img-con .profile .mini h3{
+    padding-left: 1em;
+    padding-bottom: 0;
+    padding-top: 1em;
+}
+.grid-container .grid-items.post-content .img-con .profile .mini{
+    display: flex;
+    display: inline-block;
+}
+.grid-container .grid-items.post-content .img-con .profile .mini p{
+    padding-left: 1.5em;
+    font-size: 14px;
+    padding-top: 0;
+}
+.grid-container .grid-items.post-content .img-con .profile-date{
+    font-size: 10px;
+}
+
+
+
+
+.grid-container .grid-items.text-post{
+    grid-area: text-post;
+    padding-left: 25px;
+    padding-right:25px;
+    padding-top: 35px;
+    padding-bottom: 1px;
+}
+.grid-container .grid-items.text-post .img-con{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.3em;
+}
+.grid-container .grid-items.text-post .img-con .profile{
+    display: flex;
+}
+
+
+.grid-container .grid-items.text-post .img-con .profile img{
+    width: 5em;
+    height: 5em;
+    border-radius: 100%;
+}
+.grid-container .grid-items.text-post .picture img{
+    width: 100%;
+    height: 12em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+
+}
+.grid-container .grid-items.text-post .icons{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5.5em;
+
+
+}
+.grid-container .grid-items.text-post .icons .union{
+    display: flex;
+    justify-content: space-between;
+}
+.grid-container .grid-items.text-post p{
+    padding-top: 1em;
+    padding-bottom: 0.7em;
+
+}
+.grid-container .grid-items.text-post .comments{
+    color: blue;
+    padding: 5px;
+
+}
+.grid-container .grid-items.text-post .icons .union .message{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.grid-container .grid-items.text-post .img-con .profile .mini h3{
+    padding-left: 1em;
+    padding-bottom: 0;
+    padding-top: 1em;
+}
+.grid-container .grid-items.text-post .img-con .profile .mini{
+    display: flex;
+    display: inline-block;
+}
+.grid-container .grid-items.text-post .img-con .profile .mini p{
+    padding-left: 1.5em;
+    font-size: 14px;
+    padding-top: 0;
+}
+.grid-container .grid-items.text-post .img-con .profile-date{
+    font-size: 10px;
+}
+
+
+.grid-container .grid-items.suggestions{
+    grid-area: suggestions;
+   
+}
+.grid-container .grid-items.suggestions .add-friends .heading h3{
+    font-size: 1.8em;
+    padding-left: 25px;
+    padding-right:25px;
+    padding-top: 35px;
+    padding-bottom: 1px;
+
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-1, .frnd-2, .frnd-3, .frnd-4, .frnd-5, .frnd-6{
+    display: flex;
+    padding-top:1.2em;
+    padding-bottom: 1.2em;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right:25px;
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-1 img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-2 .close img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-3 .close img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-4 .close img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-5 .close img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-6 .close img{
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+
+.grid-container .grid-items.suggestions .add-friends .frnd-1 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-2 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-3 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-4 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-5 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-6 .profile img{
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+
+}
+
+
+.grid-container .grid-items.suggestions .add-friends .frnd-1 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 10px;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-2 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 10px;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-3 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 10px;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-4 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 10px;
+}
+.grid-container .grid-items.suggestions .add-friends .frnd-5 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 5px;
+}
+
+.grid-container .grid-items.suggestions .add-friends .frnd-6 .name button{
+    background-color: blue;
+    border-radius: 20px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 10px;
+}
+.grid-container .grid-items.suggestions .seemore button{
+    padding: 16px 16px;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 5px;
+    background-color: blue;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    
+}
+.grid-container .grid-items.suggestions .seemore{
+    margin-top: 4em;
+    margin-bottom: none;
+}
+
+@media screen and (max-width:710px) {
+    .grid-container{
+        width: 100%;
+        height: 250vh;
+        display: grid;
+        background-color: rgb(248, 242, 242);
+        grid-template-columns: 5% 1fr 1fr;
+        grid-template-rows: 8% repeat(15, 1fr);
+        grid-template-areas: 
+        "sidebar header header"
+        "sidebar post post"
+        "sidebar post post"
+        "sidebar view-post view-post"
+        "sidebar view-post view-post"
+        "sidebar view-post view-post"
+        "sidebar view-post view-post"
+        "sidebar post-content post-content"
+        "sidebar post-content post-content"
+        "sidebar post-content post-content"
+        "sidebar post-content post-content"
+        "sidebar text-post text-post"
+        "sidebar text-post text-post"
+        "sidebar text-post text-post"
+        "sidebar suggestions suggestions"
+        "sidebar suggestions suggestions";
+        grid-gap: 10px;
+    } 
+    .grid-container .grid-items.header .profile img{
+        padding-left: 10px;
+        align-items: end;
+    }
+    .grid-container .grid-items.header nav ul{
+        justify-content: space-between;
+        display: block;
+        padding-left: 50%;
+        text-align: justify;
+        color: black;
+    }
+    .grid-container .grid-items.header nav ul li{
+        background-color: rgb(59, 253, 10);
+       display: flex;
+
+    }
+
+    
+.grid-container .grid-items.header nav .logo{
+    display: inline;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
